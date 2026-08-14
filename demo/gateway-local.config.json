@@ -1,0 +1,12 @@
+{
+  "vengtoo": {
+    "agentUrl": "http://127.0.0.1:8181"
+  },
+  "subject": "agent:ai-assistant",
+  "servers": {
+    "database": {
+      "command": "node",
+      "args": ["./demo/mock-servers/database-server.mjs"]
+    }
+  }
+}

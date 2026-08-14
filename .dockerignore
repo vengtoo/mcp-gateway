@@ -1,0 +1,13 @@
+node_modules
+dist
+.git
+.gitignore
+.gitlab-ci.yml
+*.log
+*.md
+demo
+test
+.vengtoo
+Dockerfile
+.dockerignore
+docker-compose.yml

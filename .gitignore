@@ -1,0 +1,19 @@
+node_modules/
+dist/
+.env
+.env.*
+.vengtoo/
+.claude/
+
+# Local demo config — carries a real API key, never commit
+demo/gateway.demo.json
+
+# Local scratch / manual test drivers — never commit (may carry real keys)
+/*.driver.mjs
+/gw-driver.mjs
+/http-driver.mjs
+/cloud-*.json
+/drift-*.json
+/http-*.json
+/proxy-*.json
+/g[0-9]*.json

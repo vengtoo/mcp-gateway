@@ -1,0 +1,14 @@
+{
+  "vengtoo": {
+    "cloudUrl": "https://api.vengtoo.com/access/v1/evaluation"
+  },
+  "subject": "agent:cursor",
+  "subjectType": "ai_agent",
+  "resourceType": "mcp_tool",
+  "servers": {
+    "database": {
+      "command": "node",
+      "args": ["mock-servers/database-server.mjs"]
+    }
+  }
+}

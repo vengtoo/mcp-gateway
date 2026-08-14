@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "vengtoo-gateway": {
+      "command": "npx",
+      "args": [
+        "vengtoo-mcp-gateway",
+        "--config",
+        "/path/to/gateway.config.json"
+      ]
+    }
+  }
+}

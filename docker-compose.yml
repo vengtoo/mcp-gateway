@@ -1,0 +1,24 @@
+# Self-host the Vengtoo MCP Gateway with Docker.
+#   export VENGTOO_API_KEY=vgt_live_...
+#   export VENGTOO_GATEWAY_HTTP_CALLERS="tok_abc=agent:claude"
+#   docker compose up --build
+#
+# Then point your MCP client at http://localhost:8808/mcp with the bearer token
+# you configured in VENGTOO_GATEWAY_HTTP_CALLERS.
+services:
+  vengtoo-mcp-gateway:
+    build: .
+    image: vengtoo/mcp-gateway:latest
+    ports:
+      - "8808:8808"
+    environment:
+      # Tenant credential — decisions are evaluated against THIS tenant's policies.
+      VENGTOO_API_KEY: ${VENGTOO_API_KEY:?set VENGTOO_API_KEY}
+      # Per-caller identity: "token=subject[,token=subject]". Required to bind a
+      # non-loopback interface (the container's 0.0.0.0). Each token authorizes
+      # as its own subject — that identity is what Vengtoo evaluates policies for.
+      VENGTOO_GATEWAY_HTTP_CALLERS: ${VENGTOO_GATEWAY_HTTP_CALLERS:?set token=subject}
+    volumes:
+      # Your gateway config: the downstream MCP server(s) + the PDP URL.
+      - ./gateway.hosted.config.json:/config/gateway.config.json:ro
+    restart: unless-stopped

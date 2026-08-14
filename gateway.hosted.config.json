@@ -1,0 +1,11 @@
+{
+  "vengtoo": {
+    "cloudUrl": "https://pdp.vengtoo.com/access/v1/evaluation"
+  },
+  "servers": {
+    "example": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/data"]
+    }
+  }
+}

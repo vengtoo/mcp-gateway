@@ -1,0 +1,15 @@
+{
+  "vengtoo": {
+    "cloudUrl": "https://api.vengtoo.com/v1/authorize",
+    "apiKey": "vgt_your_api_key_here"
+  },
+  "subject": "your-subject-id",
+  "subjectType": "agent",
+  "resourceType": "mcp_tool",
+  "servers": {
+    "database": {
+      "command": "node",
+      "args": ["./demo/mock-servers/database-server.mjs"]
+    }
+  }
+}

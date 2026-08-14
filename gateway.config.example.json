@@ -1,0 +1,21 @@
+{
+  "vengtoo": {
+    "agentUrl": "http://127.0.0.1:8181",
+    "apiKey": "vgt_your_api_key_here"
+  },
+  "subject": "agent:cursor",
+  "servers": {
+    "postgres": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-postgres", "postgresql://localhost:5432/mydb"]
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/home/user/projects"]
+    }
+  },
+  "audit": {
+    "tenantId": "your-tenant-uuid",
+    "forwardUrl": "https://api.vengtoo.com/v1/agent-logs/ingest"
+  }
+}
